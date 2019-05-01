@@ -5,31 +5,31 @@ using namespace std;
 
 #define MENSAGEM "######### Seja bem-vindo a calculadora em C++ #########"
 
-int num1, num2;
+double num1, num2;
 
-void soma(int num1, int num2)
+double soma(double num1, double num2)
 {
-    cout << num1 + num2 << endl;
+    return num1 + num2;
 }
 
-void sub(int num1, int num2)
+double sub(double num1, double num2)
 {
-    cout << num1 - num2 << endl;
+    return num1 - num2;
 }
 
-void divisao(int num1, int num2)
+double divisao(double num1, double num2)
 {
-    cout << num1 / num2 << endl;
+    return num1 / num2;
 }
 
-void multi(int num1, int num2)
+double multi(double num1, double num2)
 {
-    cout << num1 * num2 << endl;
+    return num1 * num2;
 }
 
-void resto(int num1, int num2)
+int resto(int num1, int num2)
 {
-    cout << num1 % num2 << endl;
+    return num1 % num2;
 }
 
 void menu()
@@ -51,19 +51,19 @@ void menu()
 
     switch (operacao) {
         case 1:
-            soma(num1, num2);
+            cout << soma(num1, num2) << endl;
         break;
         case 2:
-            sub(num1, num2);
+            cout << sub(num1, num2) << endl;
         break;
         case 3:
-            divisao(num1, num2);
+            cout << divisao(num1, num2) << endl;
         break;
         case 4:
-            multi(num1, num2);
+            cout << multi(num1, num2) << endl;
         break;
         case 5:
-            resto(num1, num2);
+            cout << resto(num1, num2) << endl;
         break;
         default:
             system("clear||cls");
@@ -74,7 +74,8 @@ void menu()
 
 void continuar()
 {
-    menu();
+    cout << "\nDeseja continuar?" << endl;
+    cout << "(1 - sim, 2 - não): " << endl;
 }
 
 int main()
@@ -86,14 +87,13 @@ int main()
     contador = 0;
 
     while(contador < 1) {
-        cout << "\nDeseja continuar?" << endl;
-        cout << "(1 - sim, 2 - não): " << endl;
+        continuar();
         cin >> continua;
 
         if (continua == 1) {
             system("clear||cls");
-            continuar();
-        } else {
+            menu();
+        } else if (continua == 2) {
             contador++;
             system("clear||cls");
             cout << "*****************************************" << endl;
@@ -101,6 +101,8 @@ int main()
             cout << "*             Volte sempre!             *" << endl;
             cout << "*****************************************" << endl;
             system("exit");
+        } else {
+            system("clear||cls");
         }
     }
 
