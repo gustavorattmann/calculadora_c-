@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1556733805 source:/home/gustavorattmann/Documentos/Programação/calculadora/main.cpp
+	<iostream>
+	<stdlib.h>
+
